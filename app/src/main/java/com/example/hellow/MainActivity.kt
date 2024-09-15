@@ -26,7 +26,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HelloWTheme {
-                CreateButton()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Greeting(
+                        name = "World",
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
             }
         }
     }
